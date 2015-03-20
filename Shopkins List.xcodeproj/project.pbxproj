@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E912AC411AADEC3E0058D9A1 /* ColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */; };
+		E95013FF1ABB99D300887E6A /* Shopkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95013FE1ABB99D300887E6A /* Shopkin.swift */; };
 		E95BBCBE1AADE32700356216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBD1AADE32700356216 /* AppDelegate.swift */; };
 		E95BBCC11AADE32700356216 /* Shopkins_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBF1AADE32700356216 /* Shopkins_List.xcdatamodeld */; };
 		E95BBCC31AADE32700356216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCC21AADE32700356216 /* ViewController.swift */; };
@@ -14,6 +16,7 @@
 		E95BBCC81AADE32700356216 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC71AADE32700356216 /* Images.xcassets */; };
 		E95BBCCB1AADE32700356216 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC91AADE32700356216 /* LaunchScreen.xib */; };
 		E95BBCD71AADE32700356216 /* Shopkins_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */; };
+		E99DEC061AB5028000A61347 /* 1-002.png in Resources */ = {isa = PBXBuildFile; fileRef = E99DEC041AB5028000A61347 /* 1-002.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColViewCell.swift; sourceTree = "<group>"; };
+		E95013FD1ABB997600887E6A /* Shopkins_List.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shopkins_List.sqlite; sourceTree = "<group>"; };
+		E95013FE1ABB99D300887E6A /* Shopkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopkin.swift; sourceTree = "<group>"; };
 		E95BBCB81AADE32700356216 /* Shopkins List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopkins List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95BBCBC1AADE32700356216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95BBCBD1AADE32700356216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +44,7 @@
 		E95BBCD01AADE32700356216 /* Shopkins ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopkins ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95BBCD51AADE32700356216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopkins_ListTests.swift; sourceTree = "<group>"; };
+		E99DEC041AB5028000A61347 /* 1-002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-002.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +89,12 @@
 				E95BBCBD1AADE32700356216 /* AppDelegate.swift */,
 				E95BBCC21AADE32700356216 /* ViewController.swift */,
 				E95BBCC41AADE32700356216 /* Main.storyboard */,
+				E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */,
 				E95BBCC71AADE32700356216 /* Images.xcassets */,
 				E95BBCC91AADE32700356216 /* LaunchScreen.xib */,
 				E95BBCBF1AADE32700356216 /* Shopkins_List.xcdatamodeld */,
+				E95013FE1ABB99D300887E6A /* Shopkin.swift */,
+				E95013FD1ABB997600887E6A /* Shopkins_List.sqlite */,
 				E95BBCBB1AADE32700356216 /* Supporting Files */,
 			);
 			path = "Shopkins List";
@@ -93,6 +103,7 @@
 		E95BBCBB1AADE32700356216 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E99DEC041AB5028000A61347 /* 1-002.png */,
 				E95BBCBC1AADE32700356216 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -197,6 +208,7 @@
 			files = (
 				E95BBCC61AADE32700356216 /* Main.storyboard in Resources */,
 				E95BBCCB1AADE32700356216 /* LaunchScreen.xib in Resources */,
+				E99DEC061AB5028000A61347 /* 1-002.png in Resources */,
 				E95BBCC81AADE32700356216 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95BBCC31AADE32700356216 /* ViewController.swift in Sources */,
+				E912AC411AADEC3E0058D9A1 /* ColViewCell.swift in Sources */,
+				E95013FF1ABB99D300887E6A /* Shopkin.swift in Sources */,
 				E95BBCC11AADE32700356216 /* Shopkins_List.xcdatamodeld in Sources */,
 				E95BBCBE1AADE32700356216 /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +425,7 @@
 				E95BBCDC1AADE32700356216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E95BBCDD1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins ListTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +434,7 @@
 				E95BBCDF1AADE32700356216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

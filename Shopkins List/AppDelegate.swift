@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -65,6 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Shopkins_List.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
+        
+        // ak added to store to file locally
+        if (!NSFileManager.defaultManager().fileExistsAtPath(url.path!)) {
+            let defaultStorePath = NSBundle.mainBundle().pathForResource("Shopkins_List", ofType:"sqlite")
+            NSFileManager.defaultManager().copyItemAtPath(defaultStorePath!, toPath:url.path!, error: nil)
+        }
+        
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
@@ -81,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return coordinator
     }()
+    
 
     lazy var managedObjectContext: NSManagedObjectContext? = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
