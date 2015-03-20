@@ -14,8 +14,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var collectionView: UICollectionView?
     
     var shopkins = [NSManagedObject]()
-    var tableData: [String] = ["Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc"]
-    var tableImages: [String] = ["1-001", "1-002", "1-001", "1-002", "1-001", "1-002", "1-001", "1-002", "1-001", "1-002", "1-001", "1-002"]
+    //var tableData: [String] = ["Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc", "Apple Blossum", "Rockin' Broc"]
+    //var tableImages: [String] = ["1-001", "1-002", "1-001", "1-002", "1-001", "1-002", "1-001", "1-002", "1-001", "1-002", "1-001", "1-002"]
     
     let managedObjectContext =  (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
@@ -27,8 +27,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.navigationController!.navigationBar.translucent = false
         self.navigationController!.navigationBar.barTintColor = UIColor(red:236/255, green:5/255,blue:156/255,alpha:1.0)
     
-        self.saveShopkin("1-001", name: "Apple Blossum")
-    
+        // remove all of the core Shopkin data
+        //self.deleteAll()
+        
+        // load in default data
+        //self.saveShopkin("1-001", name: "Apple Blossum")
+        //self.saveShopkin("1-002", name: "Rockin' Broc")
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,16 +44,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let shopkin = shopkins[indexPath.row]
         
         
-        //println(fetchResults)
-        
         let cell: ColViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as ColViewCell
         
         cell.nameCell!.text = shopkin.valueForKey("name") as String?
-        let img_id = shopkin.valueForKey("id") as String?
-        cell.imgCell.image = UIImage(named: img_id!)
-        
-        //cell.nameCell.text = fetchResults[indexPath.row].name
-        //cell.imgCell.image = UIImage(named: fetchResults[indexPath.row].id)
+        let sk_id = shopkin.valueForKey("id") as String?
+        if (sk_id != nil) {
+            cell.imgCell.image = UIImage(named: sk_id!)
+        }
       
         return cell
     }
@@ -58,8 +59,52 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         println("Cell \(indexPath.row) selected")
     }
     
-    func setUpFlowLayout(flow:UICollectionViewFlowLayout) {
-        flow.estimatedItemSize = CGSizeMake(400,30)
+    func saveShopkin(id: String, name: String) {
+
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let context = appDelegate.managedObjectContext!
+
+        let entity =  NSEntityDescription.entityForName("Shopkin",
+            inManagedObjectContext:
+            context)
+        
+        let shopkin = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:context)
+
+        shopkin.setValue(name, forKey: "name")
+        shopkin.setValue(id, forKey: "id")
+
+        var error: NSError?
+        if !context.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+
+        shopkins.append(shopkin)
+    }
+    
+    func deleteAll() {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let context = appDelegate.managedObjectContext!
+        
+        let request = NSFetchRequest(entityName: "Shopkin")
+        var error: NSError?
+        
+        let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "Shopkin")
+        let fetchedResults = context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        
+        if let results = fetchedResults {
+            for result in results {
+                //Consider that the results are array of NSManagedObject,
+                //so the value have to be unwrapped by the key. ie., result.valueForKey("username") as String
+                context.deleteObject(result)
+            }
+        }
+        
+        context.save(nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,33 +112,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Dispose of any resources that can be recreated.
     }
     
-    func saveShopkin(id: String, name: String) {
-        //1
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
         let appDelegate =
         UIApplication.sharedApplication().delegate as AppDelegate
-        
         let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest = NSFetchRequest(entityName:"Shopkin")
         
-        //2
-        let entity =  NSEntityDescription.entityForName("Shopkin",
-            inManagedObjectContext:
-            managedContext)
-        
-        let shopkin = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext:managedContext)
-        
-        //3
-        shopkin.setValue(name, forKey: "name")
-        shopkin.setValue(id, forKey: "id")
-        
-        //4
         var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
-        }  
-        //5
-        shopkins.append(shopkin)
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as [NSManagedObject]?
+        
+        if let results = fetchedResults {
+            shopkins = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
     }
+    
+
 
 
 }
