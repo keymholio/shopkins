@@ -98,8 +98,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         if let results = fetchedResults {
             for result in results {
-                //Consider that the results are array of NSManagedObject,
-                //so the value have to be unwrapped by the key. ie., result.valueForKey("username") as String
                 context.deleteObject(result)
             }
         }
