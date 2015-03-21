@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="41a-As-aq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="41a-As-aq4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -49,6 +49,9 @@
                                                         <rect key="frame" x="23" y="40" width="95" height="73"/>
                                                     </variation>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W5N-4q-JjO">
+                                                    <rect key="frame" x="18" y="136" width="27" height="25"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -58,6 +61,7 @@
                                             <constraint firstItem="1TR-GE-0YP" firstAttribute="leading" secondItem="OoU-8R-t9M" secondAttribute="leadingMargin" constant="-8" id="wou-ij-Z5N"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="checkCell" destination="W5N-4q-JjO" id="8Qr-SF-xj4"/>
                                             <outlet property="imgCell" destination="VWH-BT-8LS" id="0Ae-EY-mmP"/>
                                             <outlet property="nameCell" destination="1TR-GE-0YP" id="wp8-cu-w3k"/>
                                         </connections>

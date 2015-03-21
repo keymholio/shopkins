@@ -171,7 +171,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Key Lime Industries";
+				ORGANIZATIONNAME = "Key Lime";
 				TargetAttributes = {
 					E95BBCB71AADE32700356216 = {
 						CreatedOnToolsVersion = 6.1.1;

@@ -3,7 +3,7 @@
 //  Shopkins List
 //
 //  Created by Andrew Keym on 3/19/15.
-//  Copyright (c) 2015 Key Lime Industries. All rights reserved.
+//  Copyright (c) 2015 Key Lime. All rights reserved.
 //
 
 import Foundation

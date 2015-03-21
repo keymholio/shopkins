@@ -11,4 +11,5 @@ import UIKit
 class ColViewCell: UICollectionViewCell {
     @IBOutlet var imgCell: UIImageView!
     @IBOutlet var nameCell: UILabel!
+    @IBOutlet var checkCell: UIImageView!
 }
