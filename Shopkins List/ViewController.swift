@@ -3,7 +3,7 @@
 //  Shopkins List
 //
 //  Created by Andrew Keym on 3/9/15.
-//  Copyright (c) 2015 Key Lime. All rights reserved.
+//  Copyright (c) 2015 Andrew Keym. All rights reserved.
 //
 
 import UIKit
@@ -27,8 +27,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //self.deleteAll()
         
         // load in default data
-        //self.saveShopkin("1-001", name: "Apple Blossum")
-        //self.saveShopkin("1-002", name: "Rockin' Broc")
+        //self.saveShopkin("1-001", name: "Apple Blossum", rarity: "common", finish: "none", category: "Fruit & Veg", season: 1, own: false, wishlist: false)
+        //self.saveShopkin("1-002", name: "Rockin' Broc", rarity: "common", finish: "none", category: "Fruit & Veg", season: 1, own: false, wishlist: false)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,29 +38,68 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let shopkin = shopkins[indexPath.row]
+        let own = shopkin.valueForKey("own") as Bool
+        let sk_id = shopkin.valueForKey("id") as String?
+        let rarity = shopkin.valueForKey("rarity") as String?
         let cell: ColViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as ColViewCell
         
         cell.nameCell!.text = shopkin.valueForKey("name") as String?
-        let sk_id = shopkin.valueForKey("id") as String?
+        
         cell.imgCell.image = UIImage(named: sk_id!)
+        
+        if (own) {
+            cell.checkCell.image = UIImage(named: "cb_" + rarity! + "-checked")
+        } else {
+            cell.checkCell.image = UIImage(named: "cb_" + rarity!)
+        }
       
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("Cell \(indexPath.row) selected")
+        
+        let selected = shopkins[indexPath.row] as Shopkin
+        let request = NSFetchRequest(entityName: "Shopkin")
+        let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "Shopkin")
+        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as [Shopkin]?
+        
+        // this doesn't seem like the most efficient way to do this... but it works
+        // loops through the fetched results matching the selected id and changing
+        // the "own" attribute
+        if let results = fetchedResults {
+            for result in results {
+                if (result.id == selected.id) {
+                    if (result.own) {
+                        result.own = false
+                    } else {
+                        result.own = true
+                    }
+                }
+            }
+        }
+        
+        if !context!.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        
+        collectionView.reloadData()
     }
     
-    func saveShopkin(id: String, name: String) {
+    func saveShopkin(id: String, name: String, rarity: String, finish: String, category: String,
+        season: NSNumber, own: Bool, wishlist: Bool ) {
 
         let entity =  NSEntityDescription.entityForName("Shopkin", inManagedObjectContext: context!)
-        
         let shopkin = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
 
         shopkin.setValue(name, forKey: "name")
         shopkin.setValue(id, forKey: "id")
+        shopkin.setValue(rarity, forKey: "rarity")
+        shopkin.setValue(finish, forKey: "finish")
+        shopkin.setValue(category, forKey: "category")
+        shopkin.setValue(season, forKey: "season")
+        shopkin.setValue(own, forKey: "own")
+        shopkin.setValue(wishlist, forKey: "wishlist")
 
-        var error: NSError?
         if !context!.save(&error) {
             println("Could not save \(error), \(error?.userInfo)")
         }
@@ -71,7 +110,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func deleteAll() {
         
         let request = NSFetchRequest(entityName: "Shopkin")
-        
         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "Shopkin")
         let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
         
@@ -94,7 +132,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewWillAppear(animated)
 
         let fetchRequest = NSFetchRequest(entityName:"Shopkin")
-        
         let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
         
         if let results = fetchedResults {
@@ -103,9 +140,5 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
-    
-
-
-
 }
 

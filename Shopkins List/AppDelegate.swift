@@ -3,7 +3,7 @@
 //  Shopkins List
 //
 //  Created by Andrew Keym on 3/9/15.
-//  Copyright (c) 2015 Key Lime. All rights reserved.
+//  Copyright (c) 2015 Andrew Keym. All rights reserved.
 //
 
 import UIKit
@@ -61,14 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Shopkins_List.sqlite")
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Shopkins.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
         
         // ak added to store to file locally
+        println(url.path)
         if (!NSFileManager.defaultManager().fileExistsAtPath(url.path!)) {
-            let defaultStorePath = NSBundle.mainBundle().pathForResource("Shopkins_List", ofType:"sqlite")
+            let defaultStorePath = NSBundle.mainBundle().pathForResource("Shopkins", ofType:"sqlite")
             NSFileManager.defaultManager().copyItemAtPath(defaultStorePath!, toPath:url.path!, error: nil)
+            println("copied")
         }
         
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
