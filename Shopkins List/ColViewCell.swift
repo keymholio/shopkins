@@ -12,4 +12,5 @@ class ColViewCell: UICollectionViewCell {
     @IBOutlet var imgCell: UIImageView!
     @IBOutlet var nameCell: UILabel!
     @IBOutlet var checkCell: UIImageView!
+    @IBOutlet var idCell: UILabel!
 }

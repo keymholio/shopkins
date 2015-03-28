@@ -17,7 +17,11 @@
 		E95BBCC81AADE32700356216 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC71AADE32700356216 /* Images.xcassets */; };
 		E95BBCCB1AADE32700356216 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC91AADE32700356216 /* LaunchScreen.xib */; };
 		E95BBCD71AADE32700356216 /* Shopkins_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */; };
-		E9B89A381ABEF43200657E81 /* Shopkins.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E9B89A371ABEF43200657E81 /* Shopkins.sqlite */; };
+		E9AADE2B1AC5EC620049ADA5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E9AADE2A1AC5EC620049ADA5 /* iTunesArtwork */; };
+		E9AADE2D1AC5EC790049ADA5 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */; };
+		E9E99B2C1AC6E02F0014D45D /* VAG Round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9E99B2B1AC6E02F0014D45D /* VAG Round.ttf */; };
+		E9E99B2E1AC6E0390014D45D /* VAGRounded-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9E99B2D1AC6E0390014D45D /* VAGRounded-Light.ttf */; };
+		E9E99B321AC6EAE10014D45D /* Shopkins.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E9E99B311AC6EAE00014D45D /* Shopkins.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,11 @@
 		E95BBCD01AADE32700356216 /* Shopkins ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopkins ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95BBCD51AADE32700356216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopkins_ListTests.swift; sourceTree = "<group>"; };
-		E9B89A371ABEF43200657E81 /* Shopkins.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shopkins.sqlite; sourceTree = "<group>"; };
+		E9AADE2A1AC5EC620049ADA5 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; name = "iTunesArtwork@2x"; path = "../iTunesArtwork@2x"; sourceTree = "<group>"; };
+		E9E99B2B1AC6E02F0014D45D /* VAG Round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAG Round.ttf"; sourceTree = "<group>"; };
+		E9E99B2D1AC6E0390014D45D /* VAGRounded-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRounded-Light.ttf"; sourceTree = "<group>"; };
+		E9E99B311AC6EAE00014D45D /* Shopkins.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shopkins.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,10 @@
 		E95BBCBA1AADE32700356216 /* Shopkins List */ = {
 			isa = PBXGroup;
 			children = (
+				E9E99B2D1AC6E0390014D45D /* VAGRounded-Light.ttf */,
+				E9E99B2B1AC6E02F0014D45D /* VAG Round.ttf */,
+				E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */,
+				E9AADE2A1AC5EC620049ADA5 /* iTunesArtwork */,
 				E95BBCBD1AADE32700356216 /* AppDelegate.swift */,
 				E95BBCC21AADE32700356216 /* ViewController.swift */,
 				E95BBCC41AADE32700356216 /* Main.storyboard */,
@@ -103,7 +115,7 @@
 		E95BBCBB1AADE32700356216 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9B89A371ABEF43200657E81 /* Shopkins.sqlite */,
+				E9E99B311AC6EAE00014D45D /* Shopkins.sqlite */,
 				E95014001ABCA20F00887E6A /* _logo.png */,
 				E95BBCBC1AADE32700356216 /* Info.plist */,
 			);
@@ -207,11 +219,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E99B321AC6EAE10014D45D /* Shopkins.sqlite in Resources */,
+				E9AADE2B1AC5EC620049ADA5 /* iTunesArtwork in Resources */,
 				E95014011ABCA20F00887E6A /* _logo.png in Resources */,
+				E9AADE2D1AC5EC790049ADA5 /* iTunesArtwork@2x in Resources */,
 				E95BBCC61AADE32700356216 /* Main.storyboard in Resources */,
 				E95BBCCB1AADE32700356216 /* LaunchScreen.xib in Resources */,
 				E95BBCC81AADE32700356216 /* Images.xcassets in Resources */,
-				E9B89A381ABEF43200657E81 /* Shopkins.sqlite in Resources */,
+				E9E99B2C1AC6E02F0014D45D /* VAG Round.ttf in Resources */,
+				E9E99B2E1AC6E0390014D45D /* VAGRounded-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
