@@ -66,11 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var failureReason = "There was an error creating or loading the application's saved data."
         
         // ak added to store to file locally
-        println(url.path)
         if (!NSFileManager.defaultManager().fileExistsAtPath(url.path!)) {
             let defaultStorePath = NSBundle.mainBundle().pathForResource("Shopkins", ofType:"sqlite")
             NSFileManager.defaultManager().copyItemAtPath(defaultStorePath!, toPath:url.path!, error: nil)
-            println("copied")
         }
         
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
