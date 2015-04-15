@@ -14,7 +14,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var collectionView: UICollectionView?
     var error: NSError?
     var shopkins = [NSManagedObject]()
-    let context =  (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    let context =  (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shopkins.count
     }
@@ -38,12 +42,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let shopkin = shopkins[indexPath.row]
-        let own = shopkin.valueForKey("own") as Bool
-        let sk_id = shopkin.valueForKey("id") as String?
-        let rarity = shopkin.valueForKey("rarity") as String?
-        let cell: ColViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as ColViewCell
+        let own = shopkin.valueForKey("own") as! Bool
+        let sk_id = shopkin.valueForKey("id") as! String?
+        let rarity = shopkin.valueForKey("rarity") as! String?
+        let cell: ColViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! ColViewCell
         
-        cell.nameCell!.text = shopkin.valueForKey("name") as String?
+        cell.nameCell!.text = shopkin.valueForKey("name") as! String?
         cell.idCell.text = "#" + sk_id!
         cell.imgCell.image = UIImage(named: sk_id!)
         
@@ -58,10 +62,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let selected = shopkins[indexPath.row] as Shopkin
+        let selected = shopkins[indexPath.row] as! Shopkin
         let request = NSFetchRequest(entityName: "Shopkin")
         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "Shopkin")
-        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as [Shopkin]?
+        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as! [Shopkin]?
         
         // this doesn't seem like the most efficient way to do this... but it works
         // loops through the fetched results matching the selected id and changing
@@ -224,7 +228,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.saveShopkin("1-114", name: "Shampy", rarity: "common", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-115", name: "Silky", rarity: "common", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-116", name: "Bubble Tubs", rarity: "ultra_rare", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
-        self.saveShopkin("1-117", name: "Cahp-Elli", rarity: "rare", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-117", name: "Chap-Elli", rarity: "rare", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-118", name: "Polly Polish", rarity: "ultra_rare", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-119", name: "Suds", rarity: "common", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-120", name: "Toofs", rarity: "ultra_rare", finish: "none", category: "Health & Beauty", season: 1, own: false, wishlist: false)
@@ -398,7 +402,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let request = NSFetchRequest(entityName: "Shopkin")
         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "Shopkin")
-        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]?
         
         // loop through and delete the Shopkin objects in Core Data
         if let results = fetchedResults {
@@ -419,7 +423,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewWillAppear(animated)
 
         let fetchRequest = NSFetchRequest(entityName:"Shopkin")
-        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]?
         
         if let results = fetchedResults {
             shopkins = results
