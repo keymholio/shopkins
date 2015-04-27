@@ -9,16 +9,22 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
-    var collectionView: UICollectionView?
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var collection: UICollectionView!
+    
+    var tapGestureRec : UITapGestureRecognizer? = UITapGestureRecognizer()
     var error: NSError?
     var shopkins = [NSManagedObject]()
     let context =  (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-
+    var allShopkins = [NSManagedObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let layout = UICollectionViewFlowLayout()
+        
         self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController!.navigationBar.translucent = false
         self.navigationController!.navigationBar.barTintColor = UIColor(red:236/255, green:5/255,blue:156/255,alpha:1.0)
@@ -29,8 +35,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // load in default data
         //self.loadDefaults()
         
+        // add tap gesture to close keyboard when the background
+        // is clicked
+        collection.addGestureRecognizer(tapGestureRec!)
+        tapGestureRec?.addTarget(self, action: "dismissKeyboard")
+        tapGestureRec!.cancelsTouchesInView = false
+        
     }
     
+    // hides the status bar so the control center isn't 
+    // accidently engaged when scrolling up
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -41,7 +55,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let shopkin = shopkins[indexPath.row]
+        let shopkin: Shopkin
+        shopkin = shopkins[indexPath.row] as! Shopkin
+        
         let own = shopkin.valueForKey("own") as! Bool
         let sk_id = shopkin.valueForKey("id") as! String?
         let rarity = shopkin.valueForKey("rarity") as! String?
@@ -61,25 +77,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+        let selected: Shopkin
+        selected = shopkins[indexPath.row] as! Shopkin
         
-        let selected = shopkins[indexPath.row] as! Shopkin
-        let request = NSFetchRequest(entityName: "Shopkin")
-        let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "Shopkin")
-        let fetchedResults = context!.executeFetchRequest(fetchRequest, error: &error) as! [Shopkin]?
-        
-        // this doesn't seem like the most efficient way to do this... but it works
-        // loops through the fetched results matching the selected id and changing
-        // the "own" attribute
-        if let results = fetchedResults {
-            for result in results {
-                if (result.id == selected.id) {
-                    if (result.own) {
-                        result.own = false
-                    } else {
-                        result.own = true
-                    }
-                }
-            }
+        if (selected.own) {
+            selected.own = false
+        } else {
+            selected.own = true
         }
         
         if !context!.save(&error) {
@@ -87,6 +92,47 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         
         collectionView.reloadData()
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        if (searchBar.text.isEmpty) {
+            shopkins = allShopkins
+        }
+        collection.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = nil
+        self.dismissKeyboard()
+    }
+    
+    // this function is fired when the user start entering text in the Search Bar's text field
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        shopkins.removeAll(keepCapacity: false)
+        
+        if (searchText.isEmpty) {
+            shopkins = allShopkins
+        } else {
+            // filter results
+            let req = NSFetchRequest(entityName:"Shopkin")
+            req.predicate = NSPredicate(format: "name contains[c] %@", searchBar.text)
+            let reqResults = context!.executeFetchRequest(req, error: &error) as! [NSManagedObject]?
+        
+            if let results = reqResults {
+                shopkins = results
+            } else {
+                println("Could not fetch \(error), \(error!.userInfo)")
+            }
+        }
+        
+        searchBar.showsCancelButton = true  // Show the Search Bar's Cancel button
+        self.collection.reloadData()
+    }
+    
+    func dismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        searchBar.showsCancelButton = false // Hide the Search Bar's Cancel button
+        searchBar.resignFirstResponder()  // Dismiss the keyboard
     }
     
     func saveShopkin(id: String, name: String, rarity: String, finish: String, category: String,
@@ -427,6 +473,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         if let results = fetchedResults {
             shopkins = results
+            allShopkins = shopkins
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="41a-As-aq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="41a-As-aq4">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="VAG Round.ttf">
@@ -27,8 +28,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qlf-pD-gem">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="43" width="600" height="557"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mfe-ad-jaT">
                                     <size key="itemSize" width="140" height="175"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -91,16 +93,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LXS-iV-Fyv"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="vrs-OX-Uas">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SKP-q9-U3o"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="qlf-pD-gem" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="HxN-Yx-VCY"/>
-                            <constraint firstItem="qlf-pD-gem" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="J9D-oK-noQ"/>
-                            <constraint firstAttribute="trailing" secondItem="qlf-pD-gem" secondAttribute="trailing" id="JQ2-Qs-sDC"/>
-                            <constraint firstItem="qlf-pD-gem" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mch-mU-Ce1"/>
+                            <constraint firstItem="vrs-OX-Uas" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9en-Ht-4kg"/>
+                            <constraint firstItem="qlf-pD-gem" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="CRv-LU-upr"/>
+                            <constraint firstItem="vrs-OX-Uas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Cmz-ql-Gw5"/>
+                            <constraint firstItem="qlf-pD-gem" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="43" id="QAn-rs-Loc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qlf-pD-gem" secondAttribute="bottom" id="nO6-id-xxr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vrs-OX-Uas" secondAttribute="trailing" constant="-16" id="qja-2g-HNM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qlf-pD-gem" secondAttribute="trailing" constant="-16" id="uFp-jg-ifP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Shopkins" id="DYL-EH-o6M"/>
+                    <connections>
+                        <outlet property="collection" destination="qlf-pD-gem" id="0sz-Oh-2nD"/>
+                        <outlet property="searchBar" destination="vrs-OX-Uas" id="MtY-Zq-huA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
