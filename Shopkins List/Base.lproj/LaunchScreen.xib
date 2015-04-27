@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,24 +12,28 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shopkins, the Shopkins logo and all Shopkins images are registered trademarks of Moose Toys." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYw-Qp-f2W">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopkins, the Shopkins logo and all Shopkins images are registered trademarks of Moose Toys." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYw-Qp-f2W">
                     <rect key="frame" x="20" y="389" width="440" height="83"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-sB-4Ob">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-sB-4Ob">
                     <rect key="frame" x="90" y="122" width="300" height="235"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="235" id="quY-cN-Koe"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.92549019607843142" green="0.019607843137254902" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="WYw-Qp-f2W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1i3-Ay-2fv"/>
-                <constraint firstItem="FQ2-sB-4Ob" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="122" id="AuS-8R-Hnt"/>
-                <constraint firstAttribute="trailing" secondItem="FQ2-sB-4Ob" secondAttribute="trailing" constant="90" id="DgY-g4-f0E"/>
-                <constraint firstItem="FQ2-sB-4Ob" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="90" id="M6I-oV-mUv"/>
-                <constraint firstAttribute="bottom" secondItem="WYw-Qp-f2W" secondAttribute="bottom" constant="8" id="nmx-vc-zql"/>
-                <constraint firstAttribute="trailing" secondItem="WYw-Qp-f2W" secondAttribute="trailing" constant="20" id="zCr-eB-ezx"/>
+                <constraint firstItem="FQ2-sB-4Ob" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Io-4A-0yb"/>
+                <constraint firstItem="WYw-Qp-f2W" firstAttribute="top" secondItem="FQ2-sB-4Ob" secondAttribute="bottom" constant="32" id="3YK-sx-7de"/>
+                <constraint firstItem="FQ2-sB-4Ob" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="122" id="EAS-Qx-RcW"/>
+                <constraint firstItem="WYw-Qp-f2W" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="Pye-95-EDc"/>
+                <constraint firstItem="WYw-Qp-f2W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="QKc-L0-4Vb"/>
+                <constraint firstItem="WYw-Qp-f2W" firstAttribute="centerX" secondItem="FQ2-sB-4Ob" secondAttribute="centerX" id="azK-4A-WAG"/>
+                <constraint firstItem="FQ2-sB-4Ob" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="90" id="qny-O8-C9l"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -13,6 +13,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var collection: UICollectionView!
+    @IBOutlet var notFound: UIImageView!
+    @IBOutlet var notFoundText: UITextView!
     
     var tapGestureRec : UITapGestureRecognizer? = UITapGestureRecognizer()
     var error: NSError?
@@ -23,8 +25,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let layout = UICollectionViewFlowLayout()
-        
+        hideNotFound()
+            
         self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController!.navigationBar.translucent = false
         self.navigationController!.navigationBar.barTintColor = UIColor(red:236/255, green:5/255,blue:156/255,alpha:1.0)
@@ -96,14 +98,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         if (searchBar.text.isEmpty) {
+            println("empty")
             shopkins = allShopkins
+            hideNotFound()
         }
         collection.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.text = nil
         self.dismissKeyboard()
+        hideNotFound()
     }
     
     // this function is fired when the user start entering text in the Search Bar's text field
@@ -112,6 +121,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         if (searchText.isEmpty) {
             shopkins = allShopkins
+            hideNotFound()
         } else {
             // filter results
             let req = NSFetchRequest(entityName:"Shopkin")
@@ -123,10 +133,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             } else {
                 println("Could not fetch \(error), \(error!.userInfo)")
             }
+            
+            if (shopkins.isEmpty) {
+                self.notFound.alpha = 1.0
+                self.notFoundText.alpha = 1.0
+            } else {
+                hideNotFound()
+            }
         }
         
         searchBar.showsCancelButton = true  // Show the Search Bar's Cancel button
         self.collection.reloadData()
+    }
+    
+    func hideNotFound() {
+        self.notFound.alpha = 0.0
+        self.notFoundText.alpha = 0.0
     }
     
     func dismissKeyboard(){
