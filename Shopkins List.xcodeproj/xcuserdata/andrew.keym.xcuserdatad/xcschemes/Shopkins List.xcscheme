@@ -107,6 +107,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Shopkins List"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

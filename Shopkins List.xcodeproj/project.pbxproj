@@ -19,9 +19,9 @@
 		E95BBCD71AADE32700356216 /* Shopkins_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */; };
 		E9AADE2B1AC5EC620049ADA5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E9AADE2A1AC5EC620049ADA5 /* iTunesArtwork */; };
 		E9AADE2D1AC5EC790049ADA5 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */; };
+		E9CCE3A31AEFCB9200FE76C4 /* Shopkins.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E9CCE3A21AEFCB9200FE76C4 /* Shopkins.sqlite */; };
 		E9E99B2C1AC6E02F0014D45D /* VAG Round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9E99B2B1AC6E02F0014D45D /* VAG Round.ttf */; };
 		E9E99B2E1AC6E0390014D45D /* VAGRounded-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9E99B2D1AC6E0390014D45D /* VAGRounded-Light.ttf */; };
-		E9E99B321AC6EAE10014D45D /* Shopkins.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E9E99B311AC6EAE00014D45D /* Shopkins.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +51,9 @@
 		E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopkins_ListTests.swift; sourceTree = "<group>"; };
 		E9AADE2A1AC5EC620049ADA5 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; name = "iTunesArtwork@2x"; path = "../iTunesArtwork@2x"; sourceTree = "<group>"; };
+		E9CCE3A21AEFCB9200FE76C4 /* Shopkins.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shopkins.sqlite; sourceTree = "<group>"; };
 		E9E99B2B1AC6E02F0014D45D /* VAG Round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAG Round.ttf"; sourceTree = "<group>"; };
 		E9E99B2D1AC6E0390014D45D /* VAGRounded-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRounded-Light.ttf"; sourceTree = "<group>"; };
-		E9E99B311AC6EAE00014D45D /* Shopkins.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shopkins.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 		E95BBCBB1AADE32700356216 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9E99B311AC6EAE00014D45D /* Shopkins.sqlite */,
+				E9CCE3A21AEFCB9200FE76C4 /* Shopkins.sqlite */,
 				E95014001ABCA20F00887E6A /* _logo.png */,
 				E95BBCBC1AADE32700356216 /* Info.plist */,
 			);
@@ -220,7 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E99B321AC6EAE10014D45D /* Shopkins.sqlite in Resources */,
+				E9CCE3A31AEFCB9200FE76C4 /* Shopkins.sqlite in Resources */,
 				E9AADE2B1AC5EC620049ADA5 /* iTunesArtwork in Resources */,
 				E95014011ABCA20F00887E6A /* _logo.png in Resources */,
 				E9AADE2D1AC5EC790049ADA5 /* iTunesArtwork@2x in Resources */,
@@ -379,7 +379,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Shopkins List/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -394,7 +394,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Shopkins List/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -98,7 +98,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         if (searchBar.text.isEmpty) {
-            println("empty")
             shopkins = allShopkins
             hideNotFound()
         }
@@ -125,7 +124,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         } else {
             // filter results
             let req = NSFetchRequest(entityName:"Shopkin")
-            req.predicate = NSPredicate(format: "name contains[c] %@", searchBar.text)
+            
+            if searchText.hasPrefix("1") || searchText.hasPrefix("2") {
+                req.predicate = NSPredicate(format: "id beginswith[c] %@", searchBar.text)
+            } else {
+                req.predicate = NSPredicate(format: "name contains[c] %@", searchBar.text)
+            }
+            
             let reqResults = context!.executeFetchRequest(req, error: &error) as! [NSManagedObject]?
         
             if let results = reqResults {
@@ -322,6 +327,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.saveShopkin("1-140", name: "Twinky Winks", rarity: "limited", finish: "none", category: "Limited Edition", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-141", name: "Papa Tomato", rarity: "limited", finish: "none", category: "Limited Edition", season: 1, own: false, wishlist: false)
         self.saveShopkin("1-142", name: "Sunny Screen", rarity: "limited", finish: "none", category: "Limited Edition", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-143", name: "Pumpkinella", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-144", name: "Coco Nutty", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-145", name: "Rolly Roll", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-146", name: "Hot Apple Pie", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-147", name: "Margarina", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-148", name: "La'Lotion", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-149", name: "Curly Fries", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
+        self.saveShopkin("1-150", name: "Sponge Cake", rarity: "exclusive", finish: "none", category: "Exclusive", season: 1, own: false, wishlist: false)
         self.saveShopkin("2-001", name: "Chloe Flower", rarity: "rare", finish: "none", category: "Fruit & Veg", season: 2, own: false, wishlist: false)
         self.saveShopkin("2-002", name: "Sour Lemon", rarity: "ultra_rare", finish: "none", category: "Fruit & Veg", season: 2, own: false, wishlist: false)
         self.saveShopkin("2-003", name: "Juicy Orange", rarity: "common", finish: "none", category: "Fruit & Veg", season: 2, own: false, wishlist: false)
@@ -464,6 +477,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.saveShopkin("2-140", name: "Lee Tea", rarity: "limited", finish: "none", category: "Limited Edition", season: 2, own: false, wishlist: false)
         self.saveShopkin("2-141", name: "Donna Donut", rarity: "limited", finish: "none", category: "Limited Edition", season: 2, own: false, wishlist: false)
         self.saveShopkin("2-142", name: "Angie Ankle Boot", rarity: "limited", finish: "none", category: "Limited Edition", season: 2, own: false, wishlist: false)
+        self.saveShopkin("2-143", name: "Strawberries and Cream", rarity: "exclusive", finish: "none", category: "Exclusive", season: 2, own: false, wishlist: false)
+        self.saveShopkin("2-144", name: "Soda", rarity: "exclusive", finish: "none", category: "Exclusive", season: 2, own: false, wishlist: false)
     }
     
     func deleteAll() {
