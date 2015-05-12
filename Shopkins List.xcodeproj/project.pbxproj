@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E912AC411AADEC3E0058D9A1 /* ColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */; };
+		E925EB651AF9A7C100B26644 /* WishlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925EB641AF9A7C100B26644 /* WishlistController.swift */; };
 		E95013FF1ABB99D300887E6A /* Shopkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95013FE1ABB99D300887E6A /* Shopkin.swift */; };
 		E95014011ABCA20F00887E6A /* _logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E95014001ABCA20F00887E6A /* _logo.png */; };
 		E95BBCBE1AADE32700356216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBD1AADE32700356216 /* AppDelegate.swift */; };
 		E95BBCC11AADE32700356216 /* Shopkins_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBF1AADE32700356216 /* Shopkins_List.xcdatamodeld */; };
-		E95BBCC31AADE32700356216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCC21AADE32700356216 /* ViewController.swift */; };
+		E95BBCC31AADE32700356216 /* ShopkinsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCC21AADE32700356216 /* ShopkinsController.swift */; };
 		E95BBCC61AADE32700356216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC41AADE32700356216 /* Main.storyboard */; };
 		E95BBCC81AADE32700356216 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC71AADE32700356216 /* Images.xcassets */; };
 		E95BBCCB1AADE32700356216 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC91AADE32700356216 /* LaunchScreen.xib */; };
@@ -36,13 +37,14 @@
 
 /* Begin PBXFileReference section */
 		E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColViewCell.swift; sourceTree = "<group>"; };
+		E925EB641AF9A7C100B26644 /* WishlistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WishlistController.swift; path = ../WishlistController.swift; sourceTree = "<group>"; };
 		E95013FE1ABB99D300887E6A /* Shopkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopkin.swift; sourceTree = "<group>"; };
 		E95014001ABCA20F00887E6A /* _logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _logo.png; sourceTree = "<group>"; };
 		E95BBCB81AADE32700356216 /* Shopkins List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopkins List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95BBCBC1AADE32700356216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95BBCBD1AADE32700356216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95BBCC01AADE32700356216 /* Shopkins_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopkins_List.xcdatamodel; sourceTree = "<group>"; };
-		E95BBCC21AADE32700356216 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E95BBCC21AADE32700356216 /* ShopkinsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopkinsController.swift; sourceTree = "<group>"; };
 		E95BBCC51AADE32700356216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E95BBCC71AADE32700356216 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E95BBCCA1AADE32700356216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -100,7 +102,8 @@
 				E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */,
 				E9AADE2A1AC5EC620049ADA5 /* iTunesArtwork */,
 				E95BBCBD1AADE32700356216 /* AppDelegate.swift */,
-				E95BBCC21AADE32700356216 /* ViewController.swift */,
+				E95BBCC21AADE32700356216 /* ShopkinsController.swift */,
+				E925EB641AF9A7C100B26644 /* WishlistController.swift */,
 				E95BBCC41AADE32700356216 /* Main.storyboard */,
 				E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */,
 				E95BBCC71AADE32700356216 /* Images.xcassets */,
@@ -246,7 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95BBCC31AADE32700356216 /* ViewController.swift in Sources */,
+				E925EB651AF9A7C100B26644 /* WishlistController.swift in Sources */,
+				E95BBCC31AADE32700356216 /* ShopkinsController.swift in Sources */,
 				E912AC411AADEC3E0058D9A1 /* ColViewCell.swift in Sources */,
 				E95013FF1ABB99D300887E6A /* Shopkin.swift in Sources */,
 				E95BBCC11AADE32700356216 /* Shopkins_List.xcdatamodeld in Sources */,
@@ -379,7 +383,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Shopkins List/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -394,7 +398,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Shopkins List/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

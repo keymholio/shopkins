@@ -42,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func applicationDidFinishLaunching(application: UIApplication) {
+        UITabBar.appearance().selectedImageTintColor = UIColor(red:236/255, green:5/255,blue:156/255,alpha:1.0)
+    }
 
     // MARK: - Core Data stack
 

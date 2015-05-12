@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ShopkinsController.swift
 //  Shopkins List
 //
 //  Created by Andrew Keym on 3/9/15.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var collection: UICollectionView!
@@ -22,15 +22,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let context =  (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var allShopkins = [NSManagedObject]()
     
+    var wishlist: Bool { get { return false } }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        hideNotFound()
+        
+        let pink = UIColor(red:236/255, green:5/255,blue:156/255,alpha:1.0)
+        
+        hideNotFoundGraphic()
             
-        self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController!.navigationBar.translucent = false
-        self.navigationController!.navigationBar.barTintColor = UIColor(red:236/255, green:5/255,blue:156/255,alpha:1.0)
-    
+        navigationController!.navigationBar.barStyle = UIBarStyle.Black
+        navigationController!.navigationBar.translucent = false
+        navigationController!.navigationBar.barTintColor = pink
+        navigationController!.tabBarController?.tabBar.selectedImageTintColor = pink
+
         // remove all of the core Shopkin data
         //self.deleteAll()
         
@@ -99,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         if (searchBar.text.isEmpty) {
             shopkins = allShopkins
-            hideNotFound()
+            hideNotFoundGraphic()
         }
         collection.reloadData()
     }
@@ -111,25 +116,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.text = nil
         self.dismissKeyboard()
-        hideNotFound()
+        hideNotFoundGraphic()
     }
-    
+
     // this function is fired when the user start entering text in the Search Bar's text field
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         shopkins.removeAll(keepCapacity: false)
         
         if (searchText.isEmpty) {
             shopkins = allShopkins
-            hideNotFound()
+            hideNotFoundGraphic()
         } else {
             // filter results
-            let req = NSFetchRequest(entityName:"Shopkin")
+            let req = NSFetchRequest(entityName: "Shopkin")
+            let p1: NSPredicate
+            var p2 = NSPredicate(format: "1=1")
             
             if searchText.hasPrefix("1") || searchText.hasPrefix("2") {
-                req.predicate = NSPredicate(format: "id beginswith[c] %@", searchBar.text)
+                p1 = NSPredicate(format: "id beginswith[c] %@", searchBar.text)
             } else {
-                req.predicate = NSPredicate(format: "name contains[c] %@", searchBar.text)
+                p1 = NSPredicate(format: "name contains[c] %@", searchBar.text)
             }
+            
+            if (wishlist) {
+                p2 = NSPredicate(format: "own=0")
+            }
+            
+            let predicate = NSCompoundPredicate(type: NSCompoundPredicateType.AndPredicateType, subpredicates: [p1,p2])
+            
+            req.predicate = predicate
             
             let reqResults = context!.executeFetchRequest(req, error: &error) as! [NSManagedObject]?
         
@@ -143,7 +158,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 self.notFound.alpha = 1.0
                 self.notFoundText.alpha = 1.0
             } else {
-                hideNotFound()
+                hideNotFoundGraphic()
             }
         }
         
@@ -151,7 +166,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.collection.reloadData()
     }
     
-    func hideNotFound() {
+    func hideNotFoundGraphic() {
         self.notFound.alpha = 0.0
         self.notFoundText.alpha = 0.0
     }
@@ -514,6 +529,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
+        
+        collection.reloadData()
     }
 }
 
