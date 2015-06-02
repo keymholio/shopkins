@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Min-jU-Ugq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Min-jU-Ugq">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -226,22 +226,22 @@
                                                         <rect key="frame" x="0.0" y="8" width="140" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mh2-rK-7ez">
-                                                    <rect key="frame" x="20" y="53" width="100" height="73"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mh2-rK-7ez">
+                                                    <rect key="frame" x="20" y="53" width="100" height="71"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="23" y="40" width="95" height="73"/>
                                                     </variation>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-Rz-lwO">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-Rz-lwO">
                                                     <rect key="frame" x="32" y="135" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="27" id="K5q-tr-K0I"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I Want" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-OX-upR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="I Want" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-OX-upR">
                                                     <rect key="frame" x="67" y="140" width="42" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="23" id="Pm6-Kd-XqZ"/>
+                                                        <constraint firstAttribute="height" constant="23" id="Pm6-Kd-XqZ" userLabel="Height - (23) - I Want"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="VAGRounded-Light" family="VAGRounded-Light" pointSize="12"/>
                                                     <color key="textColor" red="0.2274509804" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,7 +277,6 @@
                                             <constraint firstItem="WgR-wx-NyB" firstAttribute="leading" secondItem="Ohf-OZ-guz" secondAttribute="leading" id="pnG-9e-NeP"/>
                                             <constraint firstItem="kQI-Rz-lwO" firstAttribute="top" secondItem="mh2-rK-7ez" secondAttribute="bottom" constant="8" symbolic="YES" id="rWz-5o-ns4"/>
                                             <constraint firstAttribute="trailing" secondItem="WgR-wx-NyB" secondAttribute="trailing" id="sWY-vV-bwc"/>
-                                            <constraint firstItem="uI3-OX-upR" firstAttribute="top" secondItem="mh2-rK-7ez" secondAttribute="bottom" constant="10" id="ypL-fh-KNM"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="checkCell" destination="kQI-Rz-lwO" id="nPz-js-brY"/>
@@ -338,7 +337,14 @@
                             <constraint firstItem="lZK-Od-ich" firstAttribute="top" secondItem="HTA-vC-DHN" secondAttribute="bottom" constant="13" id="yfz-BY-ZiT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wish List" id="ukG-F3-lNu"/>
+                    <navigationItem key="navigationItem" title="Wish List" id="ukG-F3-lNu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="e2Y-ho-1iv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="share:" destination="gaQ-5P-ltD" id="OaN-Mv-FVs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collection" destination="RnU-NH-TMm" id="fHz-Q2-cIG"/>
                         <outlet property="notFound" destination="HTA-vC-DHN" id="WBD-iq-FDK"/>

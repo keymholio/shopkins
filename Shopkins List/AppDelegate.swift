@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ak added - copy local sqlite file for coredata storage
         if (!NSFileManager.defaultManager().fileExistsAtPath(url.path!)) {
             let defaultStorePath = NSBundle.mainBundle().pathForResource("Shopkins", ofType:"sqlite")
+            println(defaultStorePath)
             NSFileManager.defaultManager().copyItemAtPath(defaultStorePath!, toPath:url.path!, error: nil)
         }
         

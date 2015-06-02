@@ -49,6 +49,50 @@ class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollec
         tapGestureRec!.cancelsTouchesInView = false
         
     }
+    @IBAction func share(sender: UIBarButtonItem) {
+
+        let textToShare = "These are the Shopkins on my wish list!"
+        var season1 = "\nSeason 1\n"
+        var season2 = "Season 2\n"
+        
+        for shopkin in allShopkins {
+            var season = shopkin.valueForKey("season") as! Int
+            var wishlist = shopkin.valueForKey("wishlist") as! Bool
+            var name = shopkin.valueForKey("name") as! String
+            var rarityKey = shopkin.valueForKey("rarity") as! String
+            var rarities = [
+                "common": "Common",
+                "rare": "Rare",
+                "ultra_rare": "Ultra Rare",
+                "limited": "Limited Edition",
+                "exclusive": "Exclusive - Play Set",
+                "special": "Special Edition"
+            ]
+            var rarity = rarities[rarityKey]
+            var shopkinLine = name + " (" + rarity! + ")" + "\n"
+            
+            if (season == 1 && wishlist == true) {
+                season1 += shopkinLine
+            } else if (season == 2 && wishlist == true) {
+                season2 += shopkinLine
+            }
+            
+        }
+        
+        //reset seasons if they are empty
+        if (season1 == "\nSeason 1\n" && season2 == "Season 2\n") {
+            season1 = "\nNo Shopkins :("
+            season2 = ""
+        }
+        if (season1 == "\nSeason 1\n") { season1 = "" }
+        if (season2 == "Season 2\n") { season2 = "" }
+
+        
+        let objectsToShare = [textToShare, season1, season2]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                
+        self.presentViewController(activityVC, animated: true, completion: nil)
+    }
     
     // hides the status bar so the control center isn't 
     // accidently engaged when scrolling up
@@ -494,6 +538,8 @@ class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollec
         self.saveShopkin("2-142", name: "Angie Ankle Boot", rarity: "limited", finish: "none", category: "Limited Edition", season: 2, own: false, wishlist: false)
         self.saveShopkin("2-143", name: "Strawberries and Cream", rarity: "exclusive", finish: "none", category: "Exclusive", season: 2, own: false, wishlist: false)
         self.saveShopkin("2-144", name: "Soda", rarity: "exclusive", finish: "none", category: "Exclusive", season: 2, own: false, wishlist: false)
+        self.saveShopkin("2-145", name: "Rolla Tape", rarity: "exclusive", finish: "none", category: "Exclusive", season: 2, own: false, wishlist: false)
+        self.saveShopkin("2-146", name: "Miss Candy", rarity: "exclusive", finish: "none", category: "Exclusive", season: 2, own: false, wishlist: false)
     }
     
     func deleteAll() {
