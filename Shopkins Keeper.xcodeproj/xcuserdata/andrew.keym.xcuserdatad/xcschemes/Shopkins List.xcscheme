@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E95BBCB71AADE32700356216"
-               BuildableName = "Shopkins List.app"
-               BlueprintName = "Shopkins List"
-               ReferencedContainer = "container:Shopkins List.xcodeproj">
+               BuildableName = "Shopkins Keeper.app"
+               BlueprintName = "Shopkins Keeper"
+               ReferencedContainer = "container:Shopkins Keeper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E95BBCCF1AADE32700356216"
-               BuildableName = "Shopkins ListTests.xctest"
-               BlueprintName = "Shopkins ListTests"
-               ReferencedContainer = "container:Shopkins List.xcodeproj">
+               BuildableName = "Shopkins KeeperTests.xctest"
+               BlueprintName = "Shopkins KeeperTests"
+               ReferencedContainer = "container:Shopkins Keeper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E95BBCCF1AADE32700356216"
-               BuildableName = "Shopkins ListTests.xctest"
-               BlueprintName = "Shopkins ListTests"
-               ReferencedContainer = "container:Shopkins List.xcodeproj">
+               BuildableName = "Shopkins KeeperTests.xctest"
+               BlueprintName = "Shopkins KeeperTests"
+               ReferencedContainer = "container:Shopkins Keeper.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E95BBCB71AADE32700356216"
-            BuildableName = "Shopkins List.app"
-            BlueprintName = "Shopkins List"
-            ReferencedContainer = "container:Shopkins List.xcodeproj">
+            BuildableName = "Shopkins Keeper.app"
+            BlueprintName = "Shopkins Keeper"
+            ReferencedContainer = "container:Shopkins Keeper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E95BBCB71AADE32700356216"
-            BuildableName = "Shopkins List.app"
-            BlueprintName = "Shopkins List"
-            ReferencedContainer = "container:Shopkins List.xcodeproj">
+            BuildableName = "Shopkins Keeper.app"
+            BlueprintName = "Shopkins Keeper"
+            ReferencedContainer = "container:Shopkins Keeper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E95BBCB71AADE32700356216"
-            BuildableName = "Shopkins List.app"
-            BlueprintName = "Shopkins List"
-            ReferencedContainer = "container:Shopkins List.xcodeproj">
+            BuildableName = "Shopkins Keeper.app"
+            BlueprintName = "Shopkins Keeper"
+            ReferencedContainer = "container:Shopkins Keeper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

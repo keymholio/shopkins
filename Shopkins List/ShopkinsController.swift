@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
@@ -21,7 +22,6 @@ class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollec
     var shopkins = [NSManagedObject]()
     let context =  (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var allShopkins = [NSManagedObject]()
-    
     var wishlist: Bool { get { return false } }
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollec
         navigationController!.navigationBar.barStyle = UIBarStyle.Black
         navigationController!.navigationBar.translucent = false
         navigationController!.navigationBar.barTintColor = pink
-        navigationController!.tabBarController?.tabBar.selectedImageTintColor = pink
+        navigationController!.tabBarController?.tabBar.tintColor = pink
 
         // remove all of the core Shopkin data
         //self.deleteAll()
@@ -49,6 +49,7 @@ class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollec
         tapGestureRec!.cancelsTouchesInView = false
         
     }
+    
     @IBAction func share(sender: UIBarButtonItem) {
 
         let textToShare = "These are the Shopkins on my wish list!"
@@ -577,6 +578,12 @@ class ShopkinsController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
         collection.reloadData()
+        
+        //reset stuff
+        searchBar.text = ""
+        hideNotFoundGraphic()
+        dismissKeyboard()
+        
     }
 }
 

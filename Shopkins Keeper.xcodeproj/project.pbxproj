@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E912AC411AADEC3E0058D9A1 /* ColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */; };
+		E91309361B1DE18600A5B5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95BBCC41AADE32700356216 /* Main.storyboard */; };
+		E91309391B1DE36200A5B5D2 /* Shopkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91309381B1DE36200A5B5D2 /* Shopkin.swift */; };
+		E913093A1B1DE36200A5B5D2 /* Shopkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91309381B1DE36200A5B5D2 /* Shopkin.swift */; };
 		E925EB651AF9A7C100B26644 /* WishlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925EB641AF9A7C100B26644 /* WishlistController.swift */; };
-		E95013FF1ABB99D300887E6A /* Shopkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95013FE1ABB99D300887E6A /* Shopkin.swift */; };
-		E95014011ABCA20F00887E6A /* _logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E95014001ABCA20F00887E6A /* _logo.png */; };
+		E92D4B6C1B1DCC6D000FBA02 /* ShopkinsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCC21AADE32700356216 /* ShopkinsController.swift */; };
+		E92D4B6D1B1DCCD2000FBA02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBD1AADE32700356216 /* AppDelegate.swift */; };
+		E92D4B6E1B1DCCF4000FBA02 /* WishlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925EB641AF9A7C100B26644 /* WishlistController.swift */; };
+		E92D4B6F1B1DCCFB000FBA02 /* ColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */; };
 		E95BBCBE1AADE32700356216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBD1AADE32700356216 /* AppDelegate.swift */; };
 		E95BBCC11AADE32700356216 /* Shopkins_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCBF1AADE32700356216 /* Shopkins_List.xcdatamodeld */; };
 		E95BBCC31AADE32700356216 /* ShopkinsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BBCC21AADE32700356216 /* ShopkinsController.swift */; };
@@ -37,10 +42,9 @@
 
 /* Begin PBXFileReference section */
 		E912AC401AADEC3E0058D9A1 /* ColViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColViewCell.swift; sourceTree = "<group>"; };
+		E91309381B1DE36200A5B5D2 /* Shopkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopkin.swift; sourceTree = "<group>"; };
 		E925EB641AF9A7C100B26644 /* WishlistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WishlistController.swift; path = ../WishlistController.swift; sourceTree = "<group>"; };
-		E95013FE1ABB99D300887E6A /* Shopkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopkin.swift; sourceTree = "<group>"; };
-		E95014001ABCA20F00887E6A /* _logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _logo.png; sourceTree = "<group>"; };
-		E95BBCB81AADE32700356216 /* Shopkins List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopkins List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E95BBCB81AADE32700356216 /* Shopkins Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopkins Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95BBCBC1AADE32700356216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95BBCBD1AADE32700356216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95BBCC01AADE32700356216 /* Shopkins_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopkins_List.xcdatamodel; sourceTree = "<group>"; };
@@ -48,7 +52,7 @@
 		E95BBCC51AADE32700356216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E95BBCC71AADE32700356216 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E95BBCCA1AADE32700356216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E95BBCD01AADE32700356216 /* Shopkins ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopkins ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E95BBCD01AADE32700356216 /* Shopkins KeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopkins KeeperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95BBCD51AADE32700356216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95BBCD61AADE32700356216 /* Shopkins_ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopkins_ListTests.swift; sourceTree = "<group>"; };
 		E99345BC1B1D43D4003CF9E0 /* Shopkins.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shopkins.sqlite; sourceTree = "<group>"; };
@@ -88,8 +92,8 @@
 		E95BBCB91AADE32700356216 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E95BBCB81AADE32700356216 /* Shopkins List.app */,
-				E95BBCD01AADE32700356216 /* Shopkins ListTests.xctest */,
+				E95BBCB81AADE32700356216 /* Shopkins Keeper.app */,
+				E95BBCD01AADE32700356216 /* Shopkins KeeperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +101,7 @@
 		E95BBCBA1AADE32700356216 /* Shopkins List */ = {
 			isa = PBXGroup;
 			children = (
+				E91309381B1DE36200A5B5D2 /* Shopkin.swift */,
 				E9E99B2D1AC6E0390014D45D /* VAGRounded-Light.ttf */,
 				E9E99B2B1AC6E02F0014D45D /* VAG Round.ttf */,
 				E9AADE2C1AC5EC790049ADA5 /* iTunesArtwork@2x */,
@@ -109,7 +114,6 @@
 				E95BBCC71AADE32700356216 /* Images.xcassets */,
 				E95BBCC91AADE32700356216 /* LaunchScreen.xib */,
 				E95BBCBF1AADE32700356216 /* Shopkins_List.xcdatamodeld */,
-				E95013FE1ABB99D300887E6A /* Shopkin.swift */,
 				E95BBCBB1AADE32700356216 /* Supporting Files */,
 			);
 			path = "Shopkins List";
@@ -119,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				E99345BC1B1D43D4003CF9E0 /* Shopkins.sqlite */,
-				E95014001ABCA20F00887E6A /* _logo.png */,
 				E95BBCBC1AADE32700356216 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -145,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E95BBCB71AADE32700356216 /* Shopkins List */ = {
+		E95BBCB71AADE32700356216 /* Shopkins Keeper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E95BBCDA1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins List" */;
+			buildConfigurationList = E95BBCDA1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins Keeper" */;
 			buildPhases = (
 				E95BBCB41AADE32700356216 /* Sources */,
 				E95BBCB51AADE32700356216 /* Frameworks */,
@@ -157,14 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = "Shopkins List";
+			name = "Shopkins Keeper";
 			productName = "Shopkins List";
-			productReference = E95BBCB81AADE32700356216 /* Shopkins List.app */;
+			productReference = E95BBCB81AADE32700356216 /* Shopkins Keeper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E95BBCCF1AADE32700356216 /* Shopkins ListTests */ = {
+		E95BBCCF1AADE32700356216 /* Shopkins KeeperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E95BBCDD1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins ListTests" */;
+			buildConfigurationList = E95BBCDD1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins KeeperTests" */;
 			buildPhases = (
 				E95BBCCC1AADE32700356216 /* Sources */,
 				E95BBCCD1AADE32700356216 /* Frameworks */,
@@ -175,9 +178,9 @@
 			dependencies = (
 				E95BBCD21AADE32700356216 /* PBXTargetDependency */,
 			);
-			name = "Shopkins ListTests";
+			name = "Shopkins KeeperTests";
 			productName = "Shopkins ListTests";
-			productReference = E95BBCD01AADE32700356216 /* Shopkins ListTests.xctest */;
+			productReference = E95BBCD01AADE32700356216 /* Shopkins KeeperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E95BBCB31AADE32700356216 /* Build configuration list for PBXProject "Shopkins List" */;
+			buildConfigurationList = E95BBCB31AADE32700356216 /* Build configuration list for PBXProject "Shopkins Keeper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -212,8 +215,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E95BBCB71AADE32700356216 /* Shopkins List */,
-				E95BBCCF1AADE32700356216 /* Shopkins ListTests */,
+				E95BBCB71AADE32700356216 /* Shopkins Keeper */,
+				E95BBCCF1AADE32700356216 /* Shopkins KeeperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,7 +228,6 @@
 			files = (
 				E99345BD1B1D43D4003CF9E0 /* Shopkins.sqlite in Resources */,
 				E9AADE2B1AC5EC620049ADA5 /* iTunesArtwork in Resources */,
-				E95014011ABCA20F00887E6A /* _logo.png in Resources */,
 				E9AADE2D1AC5EC790049ADA5 /* iTunesArtwork@2x in Resources */,
 				E95BBCC61AADE32700356216 /* Main.storyboard in Resources */,
 				E95BBCCB1AADE32700356216 /* LaunchScreen.xib in Resources */,
@@ -239,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91309361B1DE18600A5B5D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91309391B1DE36200A5B5D2 /* Shopkin.swift in Sources */,
 				E925EB651AF9A7C100B26644 /* WishlistController.swift in Sources */,
 				E95BBCC31AADE32700356216 /* ShopkinsController.swift in Sources */,
 				E912AC411AADEC3E0058D9A1 /* ColViewCell.swift in Sources */,
-				E95013FF1ABB99D300887E6A /* Shopkin.swift in Sources */,
 				E95BBCC11AADE32700356216 /* Shopkins_List.xcdatamodeld in Sources */,
 				E95BBCBE1AADE32700356216 /* AppDelegate.swift in Sources */,
 			);
@@ -262,6 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E913093A1B1DE36200A5B5D2 /* Shopkin.swift in Sources */,
+				E92D4B6D1B1DCCD2000FBA02 /* AppDelegate.swift in Sources */,
+				E92D4B6C1B1DCC6D000FBA02 /* ShopkinsController.swift in Sources */,
+				E92D4B6E1B1DCCF4000FBA02 /* WishlistController.swift in Sources */,
+				E92D4B6F1B1DCCFB000FBA02 /* ColViewCell.swift in Sources */,
 				E95BBCD71AADE32700356216 /* Shopkins_ListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +279,7 @@
 /* Begin PBXTargetDependency section */
 		E95BBCD21AADE32700356216 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E95BBCB71AADE32700356216 /* Shopkins List */;
+			target = E95BBCB71AADE32700356216 /* Shopkins Keeper */;
 			targetProxy = E95BBCD11AADE32700356216 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -385,7 +393,7 @@
 				INFOPLIST_FILE = "Shopkins List/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Shopkins Keeper";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -400,7 +408,7 @@
 				INFOPLIST_FILE = "Shopkins List/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Shopkins Keeper";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -419,8 +427,8 @@
 				);
 				INFOPLIST_FILE = "Shopkins ListTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shopkins List.app/Shopkins List";
+				PRODUCT_NAME = "Shopkins KeeperTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shopkins Keeper.app/Shopkins Keeper";
 			};
 			name = Debug;
 		};
@@ -434,15 +442,15 @@
 				);
 				INFOPLIST_FILE = "Shopkins ListTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shopkins List.app/Shopkins List";
+				PRODUCT_NAME = "Shopkins KeeperTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shopkins Keeper.app/Shopkins Keeper";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E95BBCB31AADE32700356216 /* Build configuration list for PBXProject "Shopkins List" */ = {
+		E95BBCB31AADE32700356216 /* Build configuration list for PBXProject "Shopkins Keeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E95BBCD81AADE32700356216 /* Debug */,
@@ -451,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E95BBCDA1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins List" */ = {
+		E95BBCDA1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins Keeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E95BBCDB1AADE32700356216 /* Debug */,
@@ -460,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E95BBCDD1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins ListTests" */ = {
+		E95BBCDD1AADE32700356216 /* Build configuration list for PBXNativeTarget "Shopkins KeeperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E95BBCDE1AADE32700356216 /* Debug */,
